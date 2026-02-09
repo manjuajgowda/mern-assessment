@@ -33,7 +33,7 @@ export default function Register() {
 			alert("Registration successful! Redirecting to login...");
 
 			setTimeout(() => {
-				navigate("/login");
+				navigate("/");
 			}, 1500);
 
 		} catch (err) {

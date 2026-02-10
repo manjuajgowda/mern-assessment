@@ -60,25 +60,25 @@ export default function Dashboard() {
     setActiveMenu(null);
   };
 
-const deleteTask = async (id) => {
-  const confirmDelete = window.confirm(
-    "Are you sure you want to delete this task?"
-  );
+  const deleteTask = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
 
-  if (!confirmDelete) return;
+    if (!confirmDelete) return;
 
-  try {
-    await API.delete(`/tasks/${id}`);
+    try {
+      await API.delete(`/tasks/${id}`);
 
-    alert("Task deleted successfully!");
+      alert("Task deleted successfully!");
 
-    fetchTasks();
+      fetchTasks();
 
-  } catch (err) {
-    console.error("Delete error:", err.response?.data || err.message);
-    alert("Failed to delete task.");
-  }
-};
+    } catch (err) {
+      console.error("Delete error:", err.response?.data || err.message);
+      alert("Failed to delete task.");
+    }
+  };
 
   const formatDate = (date) => {
     const d = new Date(date);
@@ -98,7 +98,7 @@ const deleteTask = async (id) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 md:p-10">
+    <div className="min-h-screen bg-white p-6 md:p-10">
 
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-xl md:text-2xl font-semibold text-[#1e3ba3]">
@@ -113,8 +113,8 @@ const deleteTask = async (id) => {
         </button>
       </div>
 
-      <div className="hidden md:block bg-white rounded-xl shadow p-6">
-        <table className="w-full text-left">
+      <div className="hidden md:block p-0">
+        <table className="w-full text-left border-separate border-spacing-y-3">
           <thead>
             <tr className="text-[#1e3ba3] border-b">
               <th className="py-3">No</th>
@@ -127,17 +127,34 @@ const deleteTask = async (id) => {
 
           <tbody>
             {tasks.map((task, index) => (
-              <tr key={task._id} className="border-b hover:bg-gray-50">
-                <td className="py-4">{index + 1}</td>
-                <td>{formatDate(task.dueDate)}</td>
-                <td>{task.taskName}</td>
-                <td className="max-w-xs truncate">{task.description}</td>
-                <td className="text-right relative">
+              <tr
+                key={task._id}
+                className="bg-white shadow-[0_2px_6px_rgba(0,0,0,0.08)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition"
+              >
+                <td className="py-4 px-4 font-medium border-y border-l border-gray-200 rounded-l-lg">
+                  {index + 1}
+                </td>
+
+                <td className="py-4 border-y font-medium border-gray-200">
+                  {formatDate(task.dueDate)}
+                </td>
+
+                <td className="py-4 border-y font-medium border-gray-200">
+                  {task.taskName}
+                </td>
+
+                <td className="py-4 border-y font-medium border-gray-200 max-w-xs truncate">
+                  {task.description}
+                </td>
+
+                <td className="py-4 border-y  border-r border-gray-200 rounded-r-lg text-right relative">
                   <button
                     onClick={() =>
-                      setActiveMenu(activeMenu === task._id ? null : task._id)
+                      setActiveMenu(
+                        activeMenu === task._id ? null : task._id
+                      )
                     }
-                    className="text-gray-500 hover:text-black"
+                    className="text-gray-500 hover:text-black font-medium"
                   >
                     <FiMoreVertical />
                   </button>
@@ -163,10 +180,10 @@ const deleteTask = async (id) => {
                     </div>
                   )}
                 </td>
-
               </tr>
             ))}
           </tbody>
+
         </table>
       </div>
 
@@ -174,15 +191,16 @@ const deleteTask = async (id) => {
         {tasks.map((task) => (
           <div
             key={task._id}
-            className="bg-white rounded-xl shadow p-4 relative"
+            className="bg-white p-4 
+shadow-[0_0_6px_rgba(0,0,0,0.08),0_2px_6px_rgba(0,0,0,0.08)]"
           >
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-semibold">{task.taskName}</h3>
-                <p className="text-gray-600 text-sm mt-1">
+                <h3 className="font-semibold text-[20px]">{task.taskName}</h3>
+                <p className="text-[17px] font-medium mt-1">
                   {task.description}
                 </p>
-                <p className="text-gray-500 text-sm mt-2">
+                <p className="text-[17px] font-medium mt-2">
                   {formatDate(task.dueDate)}
                 </p>
 

@@ -30,16 +30,22 @@ export default function Login() {
 
 	return (
 		<div className="min-h-screen bg-[#2f2f2f] flex items-center justify-center">
-			<div className="relative w-full md:w-[95%] min-h-screen md:h-[90vh] rounded-none md:rounded-lg overflow-hidden shadow-2xl">
-				<div className="absolute inset-0 bg-gradient-to-br from-white via-[#6b8bd6] to-[#2d2f9c]" />
-				<div className="absolute top-[-80px] right-[-80px] w-64 h-64 bg-pink-200 opacity-40 rounded-full"></div>
-				<div className="absolute bottom-[-120px] left-[30%] w-72 h-72 bg-pink-200 opacity-30 rounded-full"></div>
-				<div className="absolute bottom-[-60px] left-[-60px] w-40 h-40 bg-blue-200 opacity-30 rounded-full"></div>
-				<div className="relative z-10 pt-4 flex justify-center md:absolute md:top-8 md:left-12 md:justify-start">
+			<div className="relative w-full md:w-[100%] min-h-screen md:h-[90vh]  overflow-hidden shadow-2xl">
+				<div
+					className="absolute inset-0"
+					style={{
+						background: "linear-gradient(160deg, #ffffff 20%, #8fa9e6 35%, #2f3192 95%)"
+					}}
+				/>
+
+				<div className="absolute top-[70px] right-[-140px] md:top-[-80px] md:right-[-80px] w-60 h-60 bg-pink-200 opacity-40 rounded-full"></div>
+				<div className="absolute bottom-[-120px] left-[-30%] md:bottom-[-120px] md:left-[30%] w-72 h-72 bg-pink-200 opacity-30 rounded-full"></div>
+				<div className="absolute bottom-[-60px] left-[-180px] md:bottom-[-60px] md:left-[-60px] w-40 h-40 bg-blue-200 opacity-30 rounded-full"></div>
+				<div className="relative z-10 pt-4 flex justify-center md:absolute md:top-8 md:left-8 md:justify-start">
 					<img src={logo} alt="Lemonpay Logo" className="h-16" />
 				</div>
 
-				<div className="hidden md:flex absolute left-0 top-0 h-full w-1/2 flex-col justify-center px-16 text-white">
+				<div className="hidden md:flex absolute left-0 top-0 md:top-24 h-full w-1/2 flex-col justify-center px-8 text-white">
 					<h1 className="text-4xl font-semibold mb-3">
 						Join 1000<sup>+</sup> Businesses
 					</h1>
@@ -55,14 +61,14 @@ export default function Login() {
 
 				<div className="relative z-10 flex items-center justify-center min-h-[80vh] px-6 md:absolute md:right-0 md:top-0 md:h-full md:w-1/2">
 
-					<div className="w-full max-w-md text-white">
+					<div className="w-full max-w-md text-white mt-36 md:mt-0">
 
-						<h2 className="text-3xl font-semibold mb-2">
+						<h2 className="text-[28px] md:text-3xl font-bold mb-2">
 							Welcome Login System
 						</h2>
 
-						<p className="text-[16px] mb-6 text-white">
-							Your gateway to seamless transactions and easy payments.
+						<p className="text-[16px] mb-2 md:mb-6 text-white font-semibold">
+							Your gateway to seamless <br /> transactions and easy payments.
 						</p>
 
 						<form onSubmit={handleSubmit} className="space-y-5">

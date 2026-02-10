@@ -160,7 +160,7 @@ export default function Register() {
                   Remember me
                 </label>
 
-                <Link to="/login" className="hover:underline">
+                <Link to="/" className="hover:underline">
                   Sign In
                 </Link>
               </div>

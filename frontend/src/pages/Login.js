@@ -20,10 +20,7 @@ export default function Login() {
 
 			alert("Login successful! Redirecting...");
 
-			setTimeout(() => {
-				navigate("/task-page");
-			}, 1000);
-
+			navigate("/task-page");
 		} catch (err) {
 			console.error("Login error:", err.response?.data || err.message);
 			alert("Invalid credentials");

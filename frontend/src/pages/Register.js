@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import API from "../api";
-import logo from "../../src/Assests/lemonpay-logo.svg";
+import logo from "../../src/Assests/logo.png";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -60,33 +60,33 @@ export default function Register() {
         <div className="absolute bottom-[-60px] left-[-180px] md:bottom-[-60px] md:left-[-60px] w-40 h-40 bg-[#bcd3f3] opacity-30 rounded-full"></div>
 
 
-        <div className="relative z-10 pt-4 flex justify-center md:absolute md:top-8 md:left-8 md:justify-start">
-          <img src={logo} alt="Lemonpay Logo" className="h-16" />
+        <div className="relative z-10 pt-4 flex justify-center md:absolute md:top-0 md:left-6 md:justify-start">
+          <img src={logo} alt="Lemonpay Logo" className="h-32" />
         </div>
 
         <div className="hidden md:flex absolute left-0 top-0 md:top-24 h-full w-1/2 flex-col justify-center px-8 text-white">
           <h1 className="text-4xl font-semibold mb-3">
-            Join 1000<sup>+</sup> Businesses
+            Organize Your Work
           </h1>
 
           <h2 className="text-4xl font-semibold">
-            <span className="text-yellow-400">Powering Growth</span> with
+            <span className="text-yellow-400">Boost Productivity</span> with
           </h2>
 
           <h2 className="text-4xl font-semibold mt-1">
-            Lemonpay!
+            TaskFlow!
           </h2>
         </div>
 
         <div className="relative z-10 flex items-center justify-center min-h-[80vh] px-6 md:absolute md:right-0 md:top-0 md:h-full md:w-1/2">
-          <div className="w-full max-w-md text-white mt-28 md:mt-0">
+          <div className="w-full max-w-md text-white mt-26 md:mt-0">
 
             <h2 className="text-[24px] md:text-3xl font-bold mb-2">
               Welcome Sign Up System
             </h2>
 
             <p className="text-[16px] mb-2 md:mb-6 text-white font-semibold">
-              Your gateway to seamless <br/> transactions and easy payments.
+              Manage your tasks efficiently and <br/> stay on track every day.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -100,7 +100,7 @@ export default function Register() {
                              focus:outline-none
                              focus:shadow-[0_10px_20px_-8px_rgba(253,224,71,0.9)]
                              transition duration-300"
-                  placeholder="mahadev@lemonpay.tech"
+                  placeholder="admin@gmail.com"
                   onChange={(e) =>
                     setForm({ ...form, email: e.target.value })
                   }
